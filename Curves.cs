@@ -36,13 +36,16 @@ namespace Second_Order_Curves
             if (delta != 0) //кривая невырождена
             {
                 if (D > 0 && delta * I < 0) { curve = new Ellipse(delta, D, I, B, lambda1, lambda2); }
-                if (D > 0 && delta * I > 0) { curve = new ImagynaryEllipse(delta, D, I, B, lambda1, lambda2); }
+                if (D > 0 && delta * I > 0) { curve = new ImagynaryEllipse(); }
                 if (D < 0) { curve = new Hyperbola(delta, D, I, B, lambda1, lambda2); } 
             }
             else //кривая вырождена
             {
-                if (D > 0) { curve = new RealPoint(delta, D, I, B, lambda1, lambda2); }
-                if (D < 0) { curve = new RealIntersectingLines(delta, D, I, B, lambda1, lambda2); }
+                if (D > 0) { curve = new RealPoint(delta, lambda1, lambda2); }
+                if (D < 0) { curve = new RealIntersectingLines(delta, lambda1, lambda2); }
+                if (D == 0) {
+                    if (B < 0 || B == 0)  { curve = new ParallelLines(delta, I, B); }
+                    else { curve = new ImaginaryParallelLines(); } }
             }
         }
 

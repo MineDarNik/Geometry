@@ -48,8 +48,10 @@
     <Compile Include="Determinant.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="Hyperbola.cs" />
+    <Compile Include="ImaginaryParallelLines.cs" />
     <Compile Include="ImagynaryEllipse.cs" />
     <Compile Include="Parabola.cs" />
+    <Compile Include="ParallelLines.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealIntersectingLines.cs" />
